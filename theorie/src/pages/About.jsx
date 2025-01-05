@@ -1,32 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 
 const About = () => {
+  const [user, setUser] = useState({
+    name: "didi",
+    age: 18,
+  });
+
+  const [userList, setUserList] = useState([]);
+
+  function handleInput(e) {
+    let value = e.target.value;
+    let name = e.target.name;
+    if (name === "age") value = +value;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  }
+
+  // function handleInputAge(e){
+  //   const value = +e.target.value;
+  //   setUser({
+  //     ...user,
+  //     age: value,
+  //   })
+  // }
+
+  function handleClick(e) {
+    e.preventDefault();
+    const newUserList = [...userList, { ...user }];
+    setUserList(newUserList);
+  }
+  
+  function handleDeleteUser(i) {
+    console.log(i);
+    const newUserList = userList.filter((user, index) => index != i);
+    setUserList(newUserList);
+  }
+
   return (
     <div>
-      <h1>A propos</h1>
-      <br />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-        tempore sed itaque cum in nostrum aliquid quam molestiae repudiandae.
-        Accusantium facere rerum aperiam facilis maxime delectus sed excepturi
-        harum eos. Assumenda, praesentium omnis atque deserunt similique
-        doloremque at laborum eius facere distinctio ad, corrupti repudiandae!
-        Voluptates obcaecati nihil aperiam quia necessitatibus possimus, fugit
-        numquam labore, vitae, adipisci ducimus et placeat! Dolorum minima,
-        dolor incidunt nisi, quaerat, quasi corporis perferendis sunt maxime qui
-        beatae! Veritatis amet, cum aliquid veniam magni distinctio! Quisquam
-        facere quos ratione quibusdam debitis harum labore ad architecto?
-      </p>
-      <br />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. At, dolorum sed
-        cupiditate officia consectetur aliquid, consequatur reiciendis suscipit
-        quia inventore sit incidunt quis quasi ducimus repudiandae rerum
-        aperiam, laborum ipsum? Asperiores quam laudantium obcaecati excepturi
-        ea cumque, beatae magni deleniti eveniet perspiciatis corporis facere
-        accusamus nemo voluptates quis voluptatum. Quaerat reiciendis commodi
-        voluptatum sed facere tempore eveniet, voluptates optio rem?
-      </p>
+      <form action="" className="form">
+        <input
+          type="text"
+          onInput={handleInput}
+          name="name"
+          placeholder="name"
+        />
+        <input
+          type="number"
+          onInput={handleInput}
+          name="age"
+          placeholder="age"
+        />
+        <button type="submit" onClick={handleClick}>
+          Submit
+        </button>
+      </form>
+      <ul>
+        {userList.map((user, i) => (
+          <li key={i}>
+            <span>{user.name}</span>
+            <button onClick={() => handleDeleteUser(i)}>delete</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
