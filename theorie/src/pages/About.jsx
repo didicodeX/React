@@ -30,10 +30,13 @@ const About = () => {
     e.preventDefault();
     const newUserList = [...userList, { ...user }];
     setUserList(newUserList);
+    setUser({
+      name:"",
+      age: ""
+    })
   }
-  
+
   function handleDeleteUser(i) {
-    console.log(i);
     const newUserList = userList.filter((user, index) => index != i);
     setUserList(newUserList);
   }
@@ -45,11 +48,13 @@ const About = () => {
           type="text"
           onInput={handleInput}
           name="name"
+          value={user.name}
           placeholder="name"
         />
         <input
           type="number"
           onInput={handleInput}
+          value={user.age}
           name="age"
           placeholder="age"
         />
