@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+
+// Variables pour les titres
+$font-title: "lora";
+
+// Titre 1
+$title1-sm: (
+  font-size: 32px,
+  line-height: 40px,
+  font-weight: 600
+);
+
+$title1-md: (
+  font-size: 48px,
+  line-height: 64px,
+  font-weight: 600
+);
+
+$title1-lg: (
+  font-size: 58px,
+  line-height: 68px,
+  font-weight: 600
+);
+
+$title1-xl: (
+  font-size: 68px,
+  line-height: 80px,
+  font-weight: 600
+);
+
+// Titre 2
+$title2-sm: (
+  font-size: 20px,
+  line-height: 28px,
+  font-weight: 800
+);
+
+$title2-md: (
+  font-size: 28px,
+  line-height: 40px,
+  font-weight: 800
+);
+
+$title2-lg: (
+  font-size: 34px,
+  line-height: 76px,
+  font-weight: 800
+);
+
+$title2-xl: (
+  font-size: 48px,
+  line-height: 64px,
+  font-weight: 800
+);
+
+// Titre 3
+$title3-sm: (
+  font-size: 16px,
+  line-height: 24px,
+  font-weight: 400
+);
+
+$title3-md: (
+  font-size: 24px,
+  line-height: 32px,
+  font-weight: 400
+);
+
+$title3-lg: (
+  font-size: 40px,
+  line-height: 48px,
+  font-weight: 400
+);
+
+$title3-xl: (
+  font-size: 48px,
+  line-height: 56px,
+  font-weight: 400
+);
+
+// Variables pour les textes
+$font-text: "poppins", sans-serif;
+
+$text-sm: (
+  font-size: 14px,
+  line-height: 20px,
+  font-weight: 400
+);
+
+$text-md: (
+  font-size: 16px,
+  line-height: 28px,
+  font-weight: 400
+);
+
+$text-lg: (
+  font-size: 18px,
+  line-height: 32px,
+  font-weight: 400
+);
+
+$text-xl: (
+  font-size: 20px,
+  line-height: 36px,
+  font-weight: 400
+);
+
+// Variables pour les liens
+$font-link: "poppins", sans-serif;
+
+$link-sm: (
+  font-size: 12px,
+  line-height: 16px,
+  font-weight: 500
+);
+
+$link-md: (
+  font-size: 14px,
+  line-height: 20px,
+  font-weight: 500
+);
+
+$link-lg: (
+  font-size: 14px,
+  line-height: 24px,
+  font-weight: 500
+);
+
+
+$font-special: "Roboto", sans-serif;
+
+// Variables pour les espacements
+$spacing-unit: 1rem;
+$spacing-xs: $spacing-unit * 0.625;
+$spacing-sm: $spacing-unit;
+$spacing-md: $spacing-unit * 1.5;
+$spacing-lg: $spacing-unit * 2 ;
+$spacing-xl: $spacing-unit * 3;
+
+$limit-sm: 2rem;
+$limit-md: 5rem;
+$limit-lg: 10rem;
+$limit-xl: 20rem;
+
+
+// Variables pour les couleurs
+$text-color: #fff;
+$link-color: #ffffffc8;
+$link-color-hover: #ffffff;
+
+$primary-color: #1e1e2e;
+$secondary-color: #584966;
+$secondary-color-transparent: #1e1e2e73;
+
+$gray: #ababab;
+
+$background-color: #1e1e2e;
+
+$box-shadow: rgba(33, 20, 20, 0.08) 0px 0px 0px 1px;
+$light-box-shadow: rgba(255, 255, 255, 0.973) 0px 2px 2px 1px;
+$radius: 10px;
+

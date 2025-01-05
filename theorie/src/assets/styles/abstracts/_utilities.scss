@@ -1,0 +1,58 @@
+@use "variables" as *;
+
+.flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.gap-md {
+  gap: $spacing-md;
+}
+.gap-xs {
+  gap: $spacing-xs;
+}
+.p-xs {
+  padding: $spacing-xs;
+}
+.text-center {
+  text-align: center;
+}
+
+.bg-primary {
+  background-color: $primary-color;
+}
+
+.bg-secondary {
+  background-color: $secondary-color;
+}
+
+.b1{
+  background-color: red;
+}
+.b2{
+  background-color: blue;
+}
+.b3{
+  background-color: green;
+}
+.b4{
+  background-color: yellowgreen;
+}
+.b5{
+  background-color: brown;
+}
+
+.section-padd {
+  padding-top: 3.8rem;
+}

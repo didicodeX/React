@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as *;
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+section {
+  min-height: 100vh;
+  h2 {
+    border-bottom: 3px solid $secondary-color;
+    width: max-content;
+    margin-bottom: $spacing-md;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+

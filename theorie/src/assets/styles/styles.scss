@@ -1,8 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@forward "abstracts";
+@forward "base";
+@forward "components";
+@forward "layout";
+@forward "themes";
 
-.active {
-  font-weight: bold;
-  color: red;
-}
