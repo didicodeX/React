@@ -11,6 +11,7 @@ const AddTodo = ({ addTodo }) => {
   function handleClick(e) {
     e.preventDefault();
     addTodo(value);
+    setValue("")
   }
   return (
     <form>
