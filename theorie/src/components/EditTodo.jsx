@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const EditTodo = ({ todo, saveTodo, cancelTodo }) => {
+const EditTodo = ({ todo, editTodo, cancelTodo }) => {
   const [value, setValue] = useState(todo.content);
 
   function handleChange(e) {
@@ -10,20 +10,22 @@ const EditTodo = ({ todo, saveTodo, cancelTodo }) => {
 
   function handleClick(e) {
     e.preventDefault();
-    saveTodo(value);
+    editTodo(value);
     setValue("");
   }
   return (
     <form>
-      <h2>Add todo</h2>
       <div className="addTodo">
         <input
           type="text"
           onChange={handleChange}
           name="editedtodo"
           placeholder="edited todo"
-          value={todo.content}
+          value={value}
         />
+        <button type="button" className="button" onClick={cancelTodo}>
+          Annuler
+        </button>
         <button type="submit" className="button" onClick={handleClick}>
           Submit
         </button>

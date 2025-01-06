@@ -2,3 +2,13 @@
   display: flex;
   gap: 10px;
 }
+
+.selected {
+  border: 2px solid crimson;
+}
+
+li {
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 7px;
+}

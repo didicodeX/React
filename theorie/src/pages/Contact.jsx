@@ -4,6 +4,7 @@ import TodoList from "../components/TodoList";
 
 const Contact = () => {
   const [todoList, setTodoList] = useState([]);
+  const [message, setMessage] = useState("Veuillez entrez une tache");
 
   function addTodo(content) {
     const todo = {
@@ -11,6 +12,7 @@ const Contact = () => {
       content,
       done: false,
       edit: false,
+      selected: false,
     };
     setTodoList([...todoList, todo]);
   }
@@ -31,7 +33,8 @@ const Contact = () => {
       )
     );
   }
-  function toggleTodoEdit(id) {
+  function toggleTodoEdit(e, id) {
+    e.stopPropagation();
     setTodoList(
       todoList.map((todo) =>
         todo.id === id
@@ -43,18 +46,50 @@ const Contact = () => {
       )
     );
     console.log(todoList);
-    
+  }
+
+  function editTodo(id, content) {
+    setTodoList(
+      todoList.map((todo) =>
+        todo.id === id
+          ? {
+              ...todo,
+              edit: false,
+              content,
+            }
+          : todo
+      )
+    );
+  }
+
+  function selectTodo(id) {
+    setTodoList(
+      todoList.map((todo) =>
+        todo.id === id
+          ? {
+              ...todo,
+              selected: true,
+            }
+          : {
+              ...todo,
+              selected: false,
+            }
+      )
+    );
   }
 
   return (
     <div>
       <h1>Todo list</h1>
-      <AddTodo addTodo={addTodo} />
+      <AddTodo addTodo={addTodo} message={message} />
       <TodoList
+        message={message}
         todoList={todoList}
         deleteTodo={deleteTodo}
         toggleTodoDone={toggleTodoDone}
         toggleTodoEdit={toggleTodoEdit}
+        editTodo={editTodo}
+        selectTodo={selectTodo}
       />
     </div>
   );
