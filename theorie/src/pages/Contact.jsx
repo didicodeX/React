@@ -13,13 +13,15 @@ const Contact = () => {
       edit: false,
     };
     setTodoList([...todoList, todo]);
+    console.log("YES");
+    
   }
 
   return (
     <div>
       <h1>Todo list</h1>
       <AddTodo addTodo={addTodo} />
-      <TodoList />
+      <TodoList todoList={todoList}/>
     </div>
   );
 };

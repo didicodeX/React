@@ -1,10 +1,13 @@
-import React from 'react';
+import React from "react";
 
-const TodoItem = () => {
+const TodoItem = ({todo}) => {
   return (
-    <div>
-      <h2>Todo item</h2>
-    </div>
+    <li>
+      <span>{todo.content}</span>
+      <button className="button">Valider</button>
+      <button className="button">Modifier</button>
+      <button className="button">Supprimer</button>
+    </li>
   );
 };
 
