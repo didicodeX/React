@@ -23,7 +23,7 @@ const TodoList = ({
           />
         ) : (
           <TodoItem
-            key={todo.id}
+            key={todo.id} 
             todo={todo}
             deleteTodo={deleteTodo} //1ere methode
             toggleTodoDone={() => toggleTodoDone(todo.id)} //2ieme methode
