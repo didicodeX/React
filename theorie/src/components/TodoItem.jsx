@@ -8,7 +8,10 @@ const TodoItem = ({
   selectTodo,
 }) => {
   return (
-    <li onClick={selectTodo} className={todo.selected ? "selected" : ""}>
+    <li
+      onClick={() => selectTodo(todo.id)}
+      className={todo.selected ? "selected" : ""}
+    >
       <span>
         {todo.content} {todo.done && "(✅)"}
       </span>
@@ -16,12 +19,18 @@ const TodoItem = ({
         className="button"
         onClick={(e) => {
           e.stopPropagation();
-          toggleTodoDone;
+          toggleTodoDone(todo.id);
         }}
       >
         Valider
       </button>
-      <button className="button" onClick={toggleTodoEdit}>
+      <button
+        className="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          toggleTodoEdit(todo.id);
+        }}
+      >
         Modifier
       </button>
       <button

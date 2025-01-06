@@ -9,7 +9,6 @@ const TodoList = ({
   toggleTodoEdit,
   editTodo,
   selectTodo,
-  message
 }) => {
   return todoList.length ? (
     <ul>
@@ -25,16 +24,16 @@ const TodoList = ({
           <TodoItem
             key={todo.id} 
             todo={todo}
-            deleteTodo={deleteTodo} //1ere methode
-            toggleTodoDone={() => toggleTodoDone(todo.id)} //2ieme methode
-            toggleTodoEdit={(e) => toggleTodoEdit(e, todo.id)}
-            selectTodo={() => selectTodo(todo.id)}
+            deleteTodo={deleteTodo} //1ere methode celle que je prefere
+            toggleTodoDone={toggleTodoDone} //2ieme methode
+            toggleTodoEdit={toggleTodoEdit}
+            selectTodo={selectTodo}
           />
         )
       )}
     </ul>
   ) : (
-    <p>{message}</p>
+    <p>Veuillez entrez une tache</p>
   );
 };
 

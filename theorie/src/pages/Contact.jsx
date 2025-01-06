@@ -1,90 +1,70 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import AddTodo from "../components/AddTodo";
 import TodoList from "../components/TodoList";
+import todoReducer from "../reducers/todoReducer";
 
 const Contact = () => {
-  const [todoList, setTodoList] = useState([]);
-  const [message, setMessage] = useState("Veuillez entrez une tache");
+  const [state, dispatch] = useReducer(todoReducer, {
+    theme: "primary",
+    todoList: [],
+  });
 
   function addTodo(content) {
-    const todo = {
-      id: crypto.randomUUID(),
-      content,
-      done: false,
-      edit: false,
-      selected: false,
-    };
-    setTodoList([...todoList, todo]);
+    dispatch({
+      type: "ADD_TODO",
+      content
+    })
   }
 
   function deleteTodo(id) {
-    setTodoList(todoList.filter((todo) => todo.id != id));
+    dispatch({
+      type: "DELETE_TODO",
+      id
+    })
   }
 
   function toggleTodoDone(id) {
-    setTodoList(
-      todoList.map((todo) =>
-        todo.id === id
-          ? {
-              ...todo,
-              done: !todo.done,
-            }
-          : todo
-      )
-    );
+    dispatch({
+      type: "TOGGLE_TODO_DONE",
+      id
+    })
   }
-  function toggleTodoEdit(e, id) {
-    e.stopPropagation();
-    setTodoList(
-      todoList.map((todo) =>
-        todo.id === id
-          ? {
-              ...todo,
-              edit: !todo.edit,
-            }
-          : todo
-      )
-    );
-    console.log(todoList);
+  
+  function toggleTodoEdit(id) {
+    dispatch({
+      type: "TOGGLE_TODO_EDIT",
+      id
+    })
   }
 
   function editTodo(id, content) {
-    setTodoList(
-      todoList.map((todo) =>
-        todo.id === id
-          ? {
-              ...todo,
-              edit: false,
-              content,
-            }
-          : todo
-      )
-    );
+    dispatch({
+      type: "EDIT_TODO",
+      id,
+      content
+    })
   }
 
   function selectTodo(id) {
-    setTodoList(
-      todoList.map((todo) =>
-        todo.id === id
-          ? {
-              ...todo,
-              selected: true,
-            }
-          : {
-              ...todo,
-              selected: false,
-            }
-      )
-    );
+    dispatch({
+      type: "SELECT_TODO",
+      id
+    })
+  }
+
+  function handleChange(e){
+    dispatch({
+      type: "SET_THEME",
+      name: e.target.value
+    })
   }
 
   return (
     <div>
       <h1>Todo list</h1>
-      <AddTodo addTodo={addTodo} message={message} />
+      <AddTodo addTodo={addTodo}/>
       <TodoList
-        message={message}
-        todoList={todoList}
+        todoList={state.todoList}
         deleteTodo={deleteTodo}
         toggleTodoDone={toggleTodoDone}
         toggleTodoEdit={toggleTodoEdit}
