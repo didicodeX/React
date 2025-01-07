@@ -1,25 +1,25 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import "./styles.css";
 
-function App() {
-  const inputRef = useRef(null);
-
-  function handleClick() {
-    inputRef.current.focus();
-  }
+function Timer() {
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    document.title = "Didicode";
-  },[])
+    const id = setInterval(() => {
+      setCount((c) => c + 1);
+    }, 1000);
+    return () => {
+      clearInterval(id);
+    };
+  });
 
-  return (
-    <>
-      <input ref={inputRef} type="text" />
-      <button onClick={handleClick}>Focus input !</button>
-      <button></button>
-    </>
-  );
+  return <p>{count}</p>;
 }
 
+function App() {
+  return <Timer />;
+}
+
+//utiliser useMemo quand ca prend plus de 1ms
 export default App;
