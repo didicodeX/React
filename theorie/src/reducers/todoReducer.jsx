@@ -33,7 +33,7 @@ function todoReducer(state, action) {
       return {
         ...state,
         todoList: state.todoList.map((t) =>
-          t.id != action.id ? t : { ...t, done: !t.edit }
+          t.id != action.id ? t : { ...t, edit: !t.edit }
         ),
       };
     }
@@ -41,7 +41,7 @@ function todoReducer(state, action) {
       return {
         ...state,
         todoList: state.todoList.map((t) =>
-          t.id != action.id ? t : { ...t, content: !t.content }
+          t.id != action.id ? t : { ...t, edit: !t.edit, content: action.content }
         ),
       };
     }
