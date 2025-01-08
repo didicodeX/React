@@ -18,6 +18,12 @@ function Navbar() {
       >
         Contact
       </NavLink>
+      <NavLink
+        to="/form"
+        className={({ isActive }) => (isActive ? "active" : "")}
+      >
+        Form
+      </NavLink>
     </nav>
   );
 }
