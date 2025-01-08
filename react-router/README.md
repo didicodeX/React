@@ -1,5 +1,22 @@
 # React router
 
+Les routes peuvent prendre un grand nombre de propriétés :
+```js
+interface RouteObject {
+  path?: string;
+  index?: boolean;
+  children?: React.ReactNode;
+  caseSensitive?: boolean;
+  id?: string;
+  loader?: LoaderFunction;
+  action?: ActionFunction;
+  element?: React.ReactNode | null;
+  errorElement?: React.ReactNode | null;
+  handle?: RouteObject["handle"];
+  shouldRevalidate?: ShouldRevalidateFunction;
+}
+```
+
 ```js
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 

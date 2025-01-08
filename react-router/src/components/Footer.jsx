@@ -5,7 +5,7 @@ function Footer() {
     <footer
       className={`footer d-flex flex-row align-items-center justify-content-center p-20`}
     >
-      <p>Copyright © 2023 Dyma, Inc.</p>
+      <p>Copyright © 2023 Didicode, Inc.</p>
     </footer>
   );
 }

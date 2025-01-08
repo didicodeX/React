@@ -9,7 +9,7 @@ function Header() {
       </div>
       <ul className="headerList">
         <NavLink 
-          to="/" 
+          to="/" end
           className={({ isActive }) => (isActive ? "active" : "")}
         >
           Home
