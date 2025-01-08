@@ -1,0 +1,56 @@
+@use 'variables.scss';
+@use 'base.scss';
+@use 'flex.scss';
+@use 'utils.scss';
+@use 'debug.scss';
+@use 'themes.scss';
+
+@use '../../assets/styles/mixins' as mixin;
+
+.app {
+  min-height: 100vh;
+}
+
+
+.header {
+  position: relative;
+  padding: 10px 20px;
+  height: 58px;
+  background-color: white;
+  box-shadow: var(--box-shadow-nav);
+  color: var(--primary);
+  img {
+    width: 130px;
+    cursor: pointer;
+  }
+}
+
+.headerList {
+  display: flex;
+  gap: 5px;
+  @include mixin.xs {
+    display: none;
+  }
+}
+
+.headerXs {
+  display: none !important;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.8;
+  }
+  @include mixin.xs {
+    display: block !important;
+  }
+}
+
+
+.footer {
+  background-color: var(--gray-1);
+  color: white;
+}
+
+.active {
+  font-weight: bold;
+}
