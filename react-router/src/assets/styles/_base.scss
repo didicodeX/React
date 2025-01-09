@@ -37,7 +37,7 @@ input {
 }
 
 a {
-  color: inherit;
+  color: var(--primary);
   text-decoration: none;
 
   &:hover {
