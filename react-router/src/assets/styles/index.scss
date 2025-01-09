@@ -1,16 +1,15 @@
-@use 'variables.scss';
-@use 'base.scss';
-@use 'flex.scss';
-@use 'utils.scss';
-@use 'debug.scss';
-@use 'themes.scss';
+@use "variables.scss";
+@use "base.scss";
+@use "flex.scss";
+@use "utils.scss";
+@use "debug.scss";
+@use "themes.scss";
 
-@use '../../assets/styles/mixins' as mixin;
+@use "../../assets/styles/mixins" as mixin;
 
 .app {
   min-height: 100vh;
 }
-
 
 .header {
   position: relative;
@@ -46,7 +45,6 @@
   }
 }
 
-
 .footer {
   background-color: var(--gray-1);
   color: white;
@@ -54,4 +52,25 @@
 
 .active {
   font-weight: bold;
+}
+
+.button {
+  width: max-content;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--primary);
+  color: var(--gray-2);
+  border-radius: 999px;
+  border: none;
+  min-width: 80px;
+  padding: 4px 7px;
+  text-align: center;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+  &:hover {
+    background-color: var(--gray-2);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
 }

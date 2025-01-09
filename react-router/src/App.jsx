@@ -1,10 +1,17 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import HomePage from "./pages/HomePage";
-import ProfilePage from "./pages/Profile/ProfilePage";
+import { useEffect } from "react";
 
 function App() {
+  // const location = useLocation();
+
+  // useEffect(() => {
+  //   console.log(location);
+  // }, [location])
+
+
+
   return (
     <div className="app d-flex flex-column">
       <Header />
@@ -12,6 +19,7 @@ function App() {
         <Outlet />
       </div>
       <Footer />
+      <ScrollRestoration/>
     </div>
   );
 }

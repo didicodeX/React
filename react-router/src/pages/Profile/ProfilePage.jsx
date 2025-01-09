@@ -1,8 +1,9 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet, useParams, useSearchParams } from 'react-router-dom';
 
 const ProfilePage = () => {
+  const { id } = useParams();
+  const [queryParams, setQueryParams] = useSearchParams();
+
   return (
     <div>
       <h2>Profile</h2>
