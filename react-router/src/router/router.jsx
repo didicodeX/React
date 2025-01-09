@@ -1,10 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App";
-import ProfilePage from "./pages/Profile/ProfilePage";
-import HomePage from "./pages/HomePage";
-import ErrorPage from "./pages/ErrorPage";
-import ProfileOverview from "./pages/Profile/pages/profileOverview";
-import ProfileData from "./pages/Profile/pages/ProfileData";
+import App from "../App";
+import ProfilePage from "../pages/Profile/ProfilePage";
+import HomePage from "../pages/HomePage";
+import ErrorPage from "../pages/ErrorPage";
+import ProfileOverview from "../pages/Profile/pages/profileOverview";
+import ProfileData from "../pages/Profile/pages/ProfileData";
+import homePageLoaders from "./homePageLoaders";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
+        loader: homePageLoaders,
         element: <HomePage />,
       },
       {
